@@ -1,0 +1,8 @@
+Lifecycle Hooks: handle nhiều tác vụ
+- Có 3 giai đoạn: mount, update, unmount. 
+    - Mount: onBeforeMount(), onmounted()
+    - update: onBeforeUpdate(), onupdated()
+    - unmount: onBeforeUnmount(): muốn đưa về các giá trị null cho components khi không cần thiết, onunmounted()
+- watch(): chỉ theo dõi 1 biến, chỉ cập nhật lại khi giá trị thay đổi
+
+Props:
