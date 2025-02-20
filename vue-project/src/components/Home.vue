@@ -1,3 +1,15 @@
+<script setup>
+import { ref } from 'vue';
+
+import Popup from './Popup.vue';
+
+const isShow = ref(false)
+
+const handleShow = (value) => {
+  isShow.value = value
+}
+</script>
+
 <template>
     <div class="container">
         <div><img src="../assets/images/task.png" alt="logo">
@@ -5,7 +17,7 @@
                 <div style="display: flex;">
                     <h6>Let's get this done!</h6>
                     <img src="../assets/images/hand.png" alt="hand">
-                </div><button class="new-task">+ New task</button>
+                </div><button class="new-task" @click="handleShow(true)">+ New task</button>
             </div>
         </div>
         <div class="task-board">
@@ -64,10 +76,13 @@
                 </div>
             </div>
         </div>
+        
+    <Popup v-if="isShow" :handleShow="handleShow"/>
     </div>
 </template>
 <style scoped>
     .container {
+        position: absolute;
         font-family: Arial, sans-serif;
         padding: 10px;
         max-width: 1400px;
